@@ -29,7 +29,4 @@
 --oib char(11)
 --);
 
-create table clanovi(
-grupa int,
-polaznik int
-);
+

@@ -20,7 +20,7 @@ mjesto varchar(30)
 
 create table djelatnik(
 sifra int,
-ime varchar(5),
+ime varchar(50),
 prezime varchar(50),
 IBAN varchar(50)
 );

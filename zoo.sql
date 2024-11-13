@@ -10,9 +10,6 @@ go
 use zoo;
 go
 
-
-
-
 create table prostorija(
 sifra int not null primary key identity(1,1),
 dimenzije varchar(30) not null,
@@ -26,7 +23,6 @@ ime varchar(50) not null,
 prezime varchar(50) not null,
 IBAN varchar(50) not null
 );
-
 
 create table datum(
 d_rodenja datetime not null,

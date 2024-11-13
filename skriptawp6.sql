@@ -2,7 +2,7 @@
 
 use master;
 go
-
+-- brisem postojecu bazu ako postoji
 drop database if exists edunovawp6;
 go
 
@@ -11,7 +11,7 @@ go
 
 use edunovawp6;
 go
-
+--kreiram tablicu
 create table smjerovi(
 sifra int not null primary key identity(1,1),
 naziv varchar(50) not null ,

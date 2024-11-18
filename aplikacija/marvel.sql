@@ -46,7 +46,7 @@ insert into identitet values ('Peter','Parker', '23', '2001', ''), ('Tony', 'Sta
 select * from identitet
 
 insert into timovi (naziv, mjesto)
-values ('Avengers', 'Zemlja'), ('Guardians of the Galaxy','Offworld');
+values ('Avengers', 'Zemlja'), ('Guardians of the Galaxy','Offworld'), ('S.H.I.E.L.D', 'Zemlja');
 select * from timovi
 
 insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
@@ -55,4 +55,42 @@ values ('Spider Man', 'nadljudska snaga, izdržljivost, brzina, regeneracija, mo
 
 insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
 values ('Iron Man', 'mocno oklopno odijelo, projektili, mogucnost letenja', 'New York', 'hrabar, inteligentan, ponosan, ekscentirican', '2007', '2', '1');
-select * from heroji;
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Hawkeye', 'Ekspert streličarstvo', 'New York', 'Strpljiv, taktičar', '1964', '3', '3');
+
+ insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Thor', 'Bog groma', 'Asgard', 'Plemenit, moćan', '1962', '4', '1');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Hulk', 'Nevjerojatna snaga', 'New York', 'Impulzivna, snažna', '1962', '5', '1');
+
+ insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Vision', 'Superinteligencija, laserski zraci', 'Sokovia', 'Mirna, logična', '1968', '6', '1');
+
+ insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Natasha Romanoff', 'Vješte borilačke vještine, špijunske vještine', 'Rusija', 'Inteligentna, strateginja', '1964', '7', '1');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values ('Nick Fury', 'Vješt strateški um, vođstvo', 'New York', 'Ozbiljan, iskusan', '1963', '8', '3');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Rocket', 'Genijalac, majstor oružja', 'Planet X', 'Sarkastičan, lojalan', '2014', '9', '2');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Star-Lord', 'Vođa, vješt pilot', 'Zemlja', 'Humorističan, avanturist', '2014', '10', '2');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Groot', 'Super snaga, regeneracija', 'Planet X', 'Jednostavan, prijateljski', '2014', '11', '2');
+
+insert into  heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Drax Razarač', 'Super snaga, neuništivost', 'Planet X', 'Naivan, osvetoljubiv', '2014', '12', '2');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values('Gamora', 'Vješte borilačke vještine, atletičar', 'Zeleni planet', 'Hladna, odlučna', '2014', '13', '2');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values ('Nebula', 'Kibernetička nadogradnja, vještina borbe', 'Titan', 'Okrutna, osvetoljubiva', '2014', '14', '2');
+
+insert into heroji (ime, moc, mjesto, osobnost, g_dolaska, identitet, tim)
+values ('Mantis', 'Empatija, borilačke vještine', 'Cerberus', 'Naivna, empatična', '2014', '15', '2');

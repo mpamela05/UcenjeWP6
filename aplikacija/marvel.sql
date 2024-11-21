@@ -4,7 +4,7 @@ go
 drop database if exists marvel;
 go
 
-create database marvel;
+create database marvel collate Croatian_CI_AS;
 go
 
 use marvel;
@@ -38,11 +38,21 @@ identitet int references identitet(sifra),
 tim int references timovi(sifra)
 );
 
-insert into identitet values ('Peter','Parker', '23', '2001', ''), ('Tony', 'Stark', '50', '1970', '2023'), ('Clint', 'Barton', '50', '1970',''), 
-('Thor', 'Odinson', '1052', '0965', ''), ('Natalia', 'Romanoff', '39', '1984', '2023'),
-(' Robert Bruce', 'Banner', '55', '1969', ''), ('Vision', '', '3', '2015', '2018'), ('Nicholas Joseph', 'Fury', '74', '1950',''), 
-('89P13', '', '','',''), ('Peter', 'Quill', '44', '1980', ''),
-('Groot', '', '10', '2014', ''), ('Drax', '', '', '', ''), ('Gamora', '', '', '', '2018'), ('Nebula', '', '', '', ''), ('Mantis', '', '', '', '');
+insert into identitet values ('Peter','Parker', '23', '2001', ''), 
+('Tony', 'Stark', '50', '1970', '2023'), 
+('Clint', 'Barton', '50', '1970',''), 
+('Thor', 'Odinson', '1052', '0965', ''), 
+('Natalia', 'Romanoff', '39', '1984', '2023'),
+(' Robert Bruce', 'Banner', '55', '1969', ''), 
+('Vision', '', '3', '2015', '2018'), 
+('Nicholas Joseph', 'Fury', '74', '1950',''), 
+('89P13', '', '','',''), 
+('Peter', 'Quill', '44', '1980', ''),
+('Groot', '', '10', '2014', ''), 
+('Drax', '', '', '', ''), 
+('Gamora', '', '', '', '2018'), 
+('Nebula', '', '', '', ''), 
+('Mantis', '', '', '', '');
 select * from identitet
 
 insert into timovi (naziv, mjesto)

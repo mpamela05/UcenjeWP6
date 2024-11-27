@@ -38,7 +38,8 @@ identitet int references identitet(sifra),
 tim int references timovi(sifra)
 );
 
-insert into identitet values ('Peter','Parker', '23', '2001', 'null'), 
+insert into identitet
+values('Peter','Parker', '23', '2001', 'null'), 
 ('Tony', 'Stark', '50', '1970', '2023'), 
 ('Clint', 'Barton', '50', '1970','null'), 
 ('Thor', 'Odinson', '1052', '0965', 'null'), 

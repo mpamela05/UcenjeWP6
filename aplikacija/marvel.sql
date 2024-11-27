@@ -109,7 +109,7 @@ values ('Mantis', 'Empatija, borilačke vještine', 'Cerberus', 'Naivna, empati�
 create table korisnici(
 sifra int not null primary key identity(1,1),
 nadimak varchar(50) not null,
-lozinka varchar(32) not null,
+lozinka varchar(100) not null,
 mail varchar(50) not null,
 uloga varchar(50) not null
 );

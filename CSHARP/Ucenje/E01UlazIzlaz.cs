@@ -18,7 +18,7 @@ namespace Ucenje
 
             Console.WriteLine("Unijeli ste" + Ime);
 
-            Console.WriteLine("Unijeli ste {0}. Bravo!", Ime)
+            Console.WriteLine("Unijeli ste {0}. Bravo!", Ime);
         }
 
 

@@ -15,6 +15,7 @@ namespace Ucenje
             Console.WriteLine("Umnozak je: " + (a*b));
             Console.WriteLine("Zbroj kvadrata: " + (a*a+b*b));
             Console.WriteLine("Kvocijent je: " + (a%b));
+
            
 
 

@@ -1,5 +1,6 @@
 ﻿using Ucenje;
-E03Z1.Izvedi(); 
+E04UvijetnoGrananjeIf.Izvedi();
+//E03Z1.Izvedi(); 
 //E03Operatori.Izvedi();
 //E02Z1.Izvedi();
 //E01UlazIzlaz.Izvedi();

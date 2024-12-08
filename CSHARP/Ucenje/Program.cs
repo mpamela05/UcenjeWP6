@@ -1,5 +1,7 @@
 ﻿using Ucenje;
-E04Z2.Izvedi();
+E03Z4.Izvedi();
+//E03Z3.Izvedi();
+//E04Z2.Izvedi();
 //E06Nizovi.Izvedi();
 //E05UvjetnoGrananjeSwitch.Izvedi();
 //E04Z1.Izvedi();

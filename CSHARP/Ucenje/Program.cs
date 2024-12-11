@@ -1,5 +1,11 @@
 ﻿using Ucenje;
-Test.Izvedi();
+E19Z2.Izvedi();
+//E19Z1.Izvedi();
+//E19ForEachPetlja.Izvedi();
+//E09Z2.Izvedi();
+//E09Z1.Izvedi();
+//E09DoWhilePetlja.Izvedi();
+//Test.Izvedi();
 //E07Z2.Izvedi();
 //E07Z1.Izvedi();
 //E07ForPetlja.Izvedi();

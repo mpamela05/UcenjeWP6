@@ -19,7 +19,7 @@ namespace Ucenje
 
             Console.WriteLine(temp);
             Console.WriteLine(string.Join(", ",temp));
-
+            Console.WriteLine();
             int[,] tablica =
             {
                 {1,2,3},

@@ -23,6 +23,6 @@ namespace Ucenje
                 }
             }
             Console.WriteLine(prim ? "da" : "ne");
-        }
+        } //prim brojevi
     }
 }

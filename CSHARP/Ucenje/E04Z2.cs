@@ -12,15 +12,15 @@ namespace Ucenje
         {
             //Console.WriteLine("E04");
             int broj = int.Parse(Console.ReadLine());
-            if (broj % 2 == 0)
-            {
-                Console.WriteLine("paran");
-            }
-            else
+            if (broj % 2 == 1) 
             {
                 Console.WriteLine("neparan");
             }
-            Console.WriteLine(broj % 2 == 0 ? "paran" : "neparan");
+            else
+            {
+                Console.WriteLine("paran");
+            }
+            //Console.WriteLine(broj % 2 == 0 ? "paran" : "neparan");
         }
     }
 }

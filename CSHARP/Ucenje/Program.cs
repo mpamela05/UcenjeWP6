@@ -1,5 +1,9 @@
 ﻿using Ucenje;
-E19Z2.Izvedi();
+E12Z1.Izvedi();
+//E12Metode.Izvedi();
+//E11Z1Lose.Izvedi();
+//E11TryCatch.Izvedi();
+//E19Z2.Izvedi();
 //E19Z1.Izvedi();
 //E19ForEachPetlja.Izvedi();
 //E09Z2.Izvedi();

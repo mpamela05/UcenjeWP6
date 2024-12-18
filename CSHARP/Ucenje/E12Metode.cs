@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -72,7 +72,7 @@ namespace Ucenje
 
             while (true)
             {
-                Console.WriteLine(poruka);
+                Console.Write(poruka);
                 try
                 {
                     return int.Parse(Console.ReadLine());
@@ -85,6 +85,24 @@ namespace Ucenje
 
             //return 0;
         }
+        public static string UcitajString(string poruka) 
+        {
+            string s = "";
+            while (true) 
+            {
+                Console.Write(poruka);
+                s = Console.ReadLine().Trim();
+                if(s.Length == 0 )
+                {
+                    Console.WriteLine("obavezan unos");
+                    continue;
+                }
+                return s;
+            }
+
+            return "";
+        }
+
 
     }
 }

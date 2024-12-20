@@ -1,5 +1,6 @@
 ﻿using Ucenje;
-E13Z2.Izvedi();
+E14Vjezbanje.Izvedi();
+//E13Z2.Izvedi();
 //E13Z1.Izvedi();
 //E13Rekurzija.Izvedi();
 //Tablica.Izvedi();

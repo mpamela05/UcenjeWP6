@@ -1,5 +1,6 @@
 ﻿using Ucenje;
-E14Vjezbanje.Izvedi();
+CiklicnaTablica.Izvedi();
+//E14Vjezbanje.Izvedi();
 //E13Z2.Izvedi();
 //E13Z1.Izvedi();
 //E13Rekurzija.Izvedi();

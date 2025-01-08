@@ -1,5 +1,13 @@
 ﻿using Ucenje;
-CiklicnaTablica.Izvedi();
+BrojanjeSamoglasnika.Izvedi();
+//PreokretStringa.Izvedi();
+//FibonaccijevNIz.Izvedi();
+//ProsjekOcjena.Izvedi();
+//ParniNeparniNula.Izvedi();
+//PovrsinaPravokutnika.Izvedi();
+//ZimskiZadaci.Izvedi();
+//CiklicnaTablica2.Izvedi();
+//CiklicnaTablica.Izvedi();
 //E14Vjezbanje.Izvedi();
 //E13Z2.Izvedi();
 //E13Z1.Izvedi();

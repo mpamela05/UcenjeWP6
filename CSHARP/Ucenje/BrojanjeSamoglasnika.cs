@@ -11,9 +11,7 @@ namespace Ucenje
         public static void Izvedi()
         {
             Console.WriteLine("Unesite rijec: ");
-
-        }
-        
+          
          
     }
-}
+} 

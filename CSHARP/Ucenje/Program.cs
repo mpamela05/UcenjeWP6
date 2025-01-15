@@ -1,5 +1,6 @@
 ﻿using Ucenje;
-BrojanjeSamoglasnika.Izvedi();
+new Ucenje.E17KlasaObjekt.Program();
+//BrojanjeSamoglasnika.Izvedi();
 //PreokretStringa.Izvedi();
 //FibonaccijevNIz.Izvedi();
 //ProsjekOcjena.Izvedi();

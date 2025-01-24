@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ucenje.E17KlasaObjekt.Edunova;
 
 namespace Ucenje.E17KlasaObjekt
 {
@@ -29,10 +30,41 @@ namespace Ucenje.E17KlasaObjekt
 
             Console.WriteLine("{0},{1}", osoba.Ime, osoba.Prezime);
             Console.WriteLine(osoba.ImePrezime());
+            //Console.WriteLine("Izvodjenje staticne metode s klase");
 
             Osoba.Izvedi();
+            Mjesto mjesto = new Mjesto() { Naziv = "Osijek", PostanskiBroj = "31000" };
 
-            Console.WriteLine("Izvodjenje staticne metode s klase");
+            //osoba.Mjesto = mjesto;
+            //ispisi Osijek
+            Console.WriteLine(osoba.Mjesto.Naziv);
+            //stari nacin
+            if (osoba.Mjesto.Naziv)
+            {
+                Console.WriteLine(osoba.Mjesto.Naziv);
+            }
+            //kraci nacin
+            Console.WriteLine(osoba.Mjesto?.Naziv); //? je ovdje indikacija da ne pukne ako je null
+
+            osoba.Mjesto = new Mjesto() { Naziv = "Osijek" };
+            Console.WriteLine(osoba.Mjesto.Zupanija?.Zupan ?? "Prazno"); //?? to znaci else
+
+            Smjerovi smjerovi = new Smjerovi() { Naziv = "Web Programiranje" };
+            Grupa grupa = new () {Naziv= "WP6", Smjerovi = smjerovi};
+
+            Polaznik[] polazniciNiz = new Polaznik[2];
+
+            polazniciNiz[0] = new Polaznik() { Ime = "Pero" };
+            polazniciNiz[1] = new Polaznik() { Ime = "Marija" };
+
+            grupa.Polaznici = polazniciNiz;
+            //ispisati podatke o grupi
+            Console.WriteLine(grupa.Naziv);
+            Console.WriteLine(grupa.Smjerovi.Naziv);
+            foreach(Polaznik p in grupa.Polaznici)
+            {
+                Console.WriteLine("{0} {1}", p.Ime, p.Prezime);
+            }
         }
     }
 }

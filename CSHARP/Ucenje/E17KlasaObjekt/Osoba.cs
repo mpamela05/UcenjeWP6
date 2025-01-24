@@ -14,6 +14,8 @@ namespace Ucenje.E17KlasaObjekt
         public string? Ime { get; set; } // ? oznacava kako Ime moze biti NULL
         public string? Prezime { get; set; }
 
+        public Mjesto? Mjesto { get; set; }
+
         public string ImePrezime()
         {
             Console.WriteLine("Izvodjenje metode s objekta");
@@ -22,7 +24,7 @@ namespace Ucenje.E17KlasaObjekt
 
         public static void Izvedi()
         {
-
+            Console.WriteLine("Izvpdjenje staticne metode s klase");
         }
     }
 }

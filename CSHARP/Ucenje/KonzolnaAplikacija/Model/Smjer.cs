@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ucenje.KonzolnaAplikacija.Model
+﻿namespace Ucenje.KonzolnaAplikacija.Model
 {
     internal class Smjer
     {
@@ -15,7 +9,7 @@ namespace Ucenje.KonzolnaAplikacija.Model
             IzvodiSeOd = DateTime.Now;
             DatumPromjene = DateTime.Now;
         }
-
+        public int Sifra { get; set; }
         public string? Naziv { get; set; }
         public float? Cijena { get; set; }
         public DateTime? IzvodiSeOd { get; set; }

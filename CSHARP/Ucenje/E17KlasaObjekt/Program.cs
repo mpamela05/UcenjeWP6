@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ucenje.E17KlasaObjekt.Edunova;
+﻿using Ucenje.E17KlasaObjekt.Edunova;
 
 namespace Ucenje.E17KlasaObjekt
 {
@@ -16,9 +11,9 @@ namespace Ucenje.E17KlasaObjekt
             //Osoba je ime klase (primjetiti veliko pocetno slovo)
             //osoba j ime objekta(instanca/pojvosti) = varijabla (malo pocetno slovo)
             Osoba osoba = new Osoba();
-        
-            
 
+
+           
             osoba.Sifra = 1;
 
             osoba.Ime = "Pero";
@@ -37,12 +32,10 @@ namespace Ucenje.E17KlasaObjekt
 
             //osoba.Mjesto = mjesto;
             //ispisi Osijek
-            Console.WriteLine(osoba.Mjesto.Naziv);
+            
             //stari nacin
-            if (osoba.Mjesto.Naziv)
-            {
-                Console.WriteLine(osoba.Mjesto.Naziv);
-            }
+            
+           
             //kraci nacin
             Console.WriteLine(osoba.Mjesto?.Naziv); //? je ovdje indikacija da ne pukne ako je null
 

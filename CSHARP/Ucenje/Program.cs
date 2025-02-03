@@ -1,4 +1,6 @@
 ﻿using Ucenje;
+//PronadjiPrefiks.Izvedi();
+//RimskiBrojeviuInt.Izvedi();
 //new Ucenje.E17KlasaObjekt.Program();
 //BrojanjeSamoglasnika.Izvedi();
 //PreokretStringa.Izvedi();

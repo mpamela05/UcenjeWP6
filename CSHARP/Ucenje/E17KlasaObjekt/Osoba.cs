@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Ucenje.E17KlasaObjekt
+﻿namespace Ucenje.E17KlasaObjekt
 {
     // KLasa je opisinik objekta
     internal class Osoba
     {
+        internal static object mjesto;
+
         //klasa sadrzi svojstva (property)
         public int Sifra { get; set; }   // OOP princip ucahurivanja
         public string? Ime { get; set; } // ? oznacava kako Ime moze biti NULL

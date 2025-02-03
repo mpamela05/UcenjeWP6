@@ -1,4 +1,0 @@
---use zoo;
---update prostorija set dimenzije='50x34' where sifra=4;
---update djelatnik set IBAN='HR54123689' where ime='Sanja';
---update zivotinja set vrsta='Lav' where sifra=6; 

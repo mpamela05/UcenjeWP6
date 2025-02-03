@@ -1,4 +1,0 @@
---use zoo;
---delete from djelatnik where ime='Juraj';
---delete from prostorija where mjesto='prasuma';
---delete from prostorija where sifra=2;

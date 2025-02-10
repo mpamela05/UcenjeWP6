@@ -1,4 +1,6 @@
-﻿using Ucenje;
+﻿//new Ucenje.NasljedjivanjePolimorfizzam;
+//new Ucenje.KonzolnaAplikacija;
+//new Ucenje.GenericiLambdaEkstenzije;
 //PronadjiPrefiks.Izvedi();
 //RimskiBrojeviuInt.Izvedi();
 //new Ucenje.E17KlasaObjekt.Program();

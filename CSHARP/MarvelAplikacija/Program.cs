@@ -24,7 +24,12 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(o =>
+{
+    o.EnableTryItOutByDefault();
+    o.ConfigObject.AdditionalItems.Add("requestSnippeEnabled", false);
+});
+
 
 app.MapControllers();
 

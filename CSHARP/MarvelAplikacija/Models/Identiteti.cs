@@ -1,6 +1,6 @@
-﻿namespace MarvelAplikacija.Models
+﻿namespace Identitet.Models
 {
-    public class identiteti : Entitet
+    public class Identiteti : Entitet
     {
         public string ime { get; set; } = "";
         public string prezime { get; set; }

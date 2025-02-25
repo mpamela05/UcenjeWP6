@@ -1,8 +1,7 @@
 ﻿using MarvelAplikacija.Data;
-using MarvelAplikacija.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MarvelAplikacija.Controllers
+namespace Identitet.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller")]
@@ -30,7 +29,8 @@ namespace MarvelAplikacija.Controllers
         }
         [HttpGet]
         [Route("{sifra:int}")]
-        public IActionResult Get(int sifra) {
+        public IActionResult Get(int sifra)
+        {
             try
             {
                 var s = _context.Identitet.Find(sifra);
@@ -48,13 +48,13 @@ namespace MarvelAplikacija.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(identiteti identitet)
+        public IActionResult Post(IdentitetController Identitet)
         {
             try
             {
-                _context.Identitet.Add(identitet);
+                _context.Identitet.Add(Identitet);
                 _context.SaveChanges();
-                return Post(identitet);
+                return Post(Identitet);
 
             }
             catch (Exception e)
@@ -63,10 +63,6 @@ namespace MarvelAplikacija.Controllers
             }
         }
 
-        private IActionResult Post(identiteti identitet)
-        {
-            return StatusCode(StatusCode.Status201Created, identitet);
-        }
 
         [HttpPut]
         [Route("{sifra:int}")]
@@ -80,11 +76,11 @@ namespace MarvelAplikacija.Controllers
                 {
                     return NotFound();
                 }
-                s.ime = identitet.ime;
-                s.prezime = identitet.prezime;
-                s.godine = identitet.godine;
-                s.god_rodjenja = identitet.god_rodjenja;
-                s.god_smrti = identitet.god_smrti;
+                s.ime = Identiteti.ime;
+                s.prezime = Identiteti.prezime;
+                s.godine = Identiteti.godine;
+                s.god_rodjenja = Identiteti.god_rodjenja;
+                s.god_smrti = Identiteti.god_smrti;
 
 
                 _context.Identitet.Update(s);
@@ -120,4 +116,14 @@ namespace MarvelAplikacija.Controllers
 
         }
     }
+
+    internal class Identiteti
+    {
+        internal static object ime;
+        internal static object prezime;
+        internal static object godine;
+        internal static object god_rodjenja;
+        internal static object god_smrti;
+    }
+}
 

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MarvelAplikacija.Models
+namespace entitet.Models
 {
     public class Entitet
     {

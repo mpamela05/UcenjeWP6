@@ -1,0 +1,1 @@
+cd C:\Users\davor\Documents\GitHub\UcenjeWP6\frontend

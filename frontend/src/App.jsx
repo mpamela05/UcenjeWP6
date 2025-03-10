@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap'
 import NavBarMarvel from './components/NavBarMarvel'
 import { Route, Routes } from 'react-router-dom'
 import { RouteNames } from './constants'
+import IdentitetiPregled from './pages/Identiteti/IdentitetiPregled'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
       <NavBarMarvel />
       <Routes>
         <Route path={RouteNames.HOME} element={<Pocetna />} />
+        <Route path={RouteNames.IDENTITET_PREGLED} element={<IdentitetiPregled/>}/>
       </Routes>
       <hr />
       &copy; Pamela 2025

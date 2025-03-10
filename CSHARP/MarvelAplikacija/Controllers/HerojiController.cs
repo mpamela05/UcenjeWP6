@@ -1,17 +1,19 @@
 ﻿using MarvelAplikacija.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MarvelAplikacija.Models;
 
-namespace Timovi.Controllers
+namespace MarvelAplikacija.Controllers
 {
+
         [ApiController]
         [Route("api/v1/[controller]")]
-        public class TimoviController : ControllerBase
+        public class HerojiController : ControllerBase
         {
 
         private readonly MarvelContext _context;
 
-        public TimoviController(MarvelContext context)
+        public HerojiController(MarvelContext context)
             {
                 _context = context;
             }
@@ -21,7 +23,9 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    return Ok(_context.Timovi);
+                var heroji = _context.Heroji.Include(h => h.Identitet).Include(h => h.Tim).ToList();
+                return Ok(heroji);
+                //return Ok(_context.Heroji);
                 }
                 catch (Exception e)
                 {
@@ -34,11 +38,14 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
-                    if (s == null)
-                    {
-                        return NotFound();
-                    }
+                var s = _context.Heroji
+                    .Include(h => h.Identitet)
+                    .Include(h => h.Tim)
+                    .FirstOrDefault(h => h.Sifra == sifra);
+                if (s == null)
+                {
+                    return NotFound();
+                }
                     return base.Ok(s);
                 }
                 catch (Exception e)
@@ -48,16 +55,15 @@ namespace Timovi.Controllers
 
             }
 
-
-
         [HttpPost]
-            public IActionResult Post([FromBody] Tim tim, MarvelContext _context)
+            public IActionResult Post([FromBody] Heroji heroj)
             {
                 try
                 {
-                    _context.Timovi.Add(tim);
+                    _context.Heroji.Add(heroj);
                     _context.SaveChanges();
-                    return CreatedAtAction(nameof(Get), new { sifra = tim.Sifra}, tim);
+                    return CreatedAtAction(nameof(Get), new { sifra = heroj.Sifra }, heroj);
+
 
                 }
                 catch (Exception e)
@@ -66,23 +72,27 @@ namespace Timovi.Controllers
                 }
             }
 
+
             [HttpPut]
             [Route("{sifra:int}")]
             [Produces("application/json")]
-            public IActionResult Put(int sifra, [FromBody] Tim tim)
+            public IActionResult Put(int sifra, [FromBody] Heroji heroj)
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
+                    var s = _context.Heroji.Find(sifra);
                     if (s == null)
                     {
                         return NotFound();
                     }
-                    s.Naziv = tim.Naziv;
-                    s.Mjesto = tim.Mjesto;
+                    s.Ime = heroj.Ime;
+                    s.Moc = heroj.Moc;
+                    s.Mjesto = heroj.Mjesto;
+                    s.Osobnost = heroj.Osobnost;
+                    s.G_dolaska = heroj.G_dolaska;
 
 
-                    _context.Timovi.Update(s);
+                    _context.Heroji.Update(s);
                     _context.SaveChanges();
                     return Ok(new { poruka = "Uspjesno promjenjeno" });
                 }
@@ -97,12 +107,12 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
+                    var s = _context.Heroji.Find(sifra);
                     if (s == null)
                     {
                         return NotFound();
                     }
-                    _context.Timovi.Remove(s);
+                    _context.Heroji.Remove(s);
                     _context.SaveChanges();
                     return Ok(new { poruka = "Uspjesno obrisano" });
                 }
@@ -115,7 +125,7 @@ namespace Timovi.Controllers
 
             }
         }
-    }
+}
 
 
 

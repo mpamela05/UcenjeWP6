@@ -2,16 +2,16 @@
 using Microsoft.AspNetCore.Mvc;
 using MarvelAplikacija.Models;
 
-namespace Timovi.Controllers
+namespace Korisnici.Controllers
 {
         [ApiController]
         [Route("api/v1/[controller]")]
-        public class TimoviController : ControllerBase
+        public class KorisniciController : ControllerBase
         {
 
-        private readonly MarvelContext _context;
+            private readonly MarvelContext _context;
 
-        public TimoviController(MarvelContext context)
+            public KorisniciController(MarvelContext context)
             {
                 _context = context;
             }
@@ -21,7 +21,7 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    return Ok(_context.Timovi);
+                    return Ok(_context.Korisnici);
                 }
                 catch (Exception e)
                 {
@@ -34,7 +34,7 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
+                    var s = _context.Korisnici.Find(sifra);
                     if (s == null)
                     {
                         return NotFound();
@@ -48,41 +48,41 @@ namespace Timovi.Controllers
 
             }
 
-
-
-        [HttpPost]
-            public IActionResult Post([FromBody] Tim tim, MarvelContext _context)
+            [HttpPost]
+            public IActionResult Post([FromBody] Korisnik korisnik, MarvelContext _context)
             {
                 try
                 {
-                    _context.Timovi.Add(tim);
+                    _context.Korisnici.Add(korisnik);
                     _context.SaveChanges();
-                    return CreatedAtAction(nameof(Get), new { sifra = tim.Sifra}, tim);
+                    return CreatedAtAction(nameof(Get), new { sifra = korisnik.Sifra }, korisnik);
 
-                }
+            }
                 catch (Exception e)
                 {
                     return BadRequest(e.Message);
                 }
             }
 
+
             [HttpPut]
             [Route("{sifra:int}")]
             [Produces("application/json")]
-            public IActionResult Put(int sifra, [FromBody] Tim tim)
+            public IActionResult Put(int sifra, [FromBody] Korisnik korisnik)
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
+                    var s = _context.Korisnici.Find(sifra);
                     if (s == null)
                     {
                         return NotFound();
                     }
-                    s.Naziv = tim.Naziv;
-                    s.Mjesto = tim.Mjesto;
+                     s.Nadimak = korisnik.Nadimak;
+                     s.Lozinka = korisnik.Lozinka;
+                     s.Mail = korisnik.Mail;
+                     s.Uloga = korisnik.Uloga;
 
-
-                    _context.Timovi.Update(s);
+                _context.Korisnici.Update(s);
                     _context.SaveChanges();
                     return Ok(new { poruka = "Uspjesno promjenjeno" });
                 }
@@ -97,12 +97,12 @@ namespace Timovi.Controllers
             {
                 try
                 {
-                    var s = _context.Timovi.Find(sifra);
+                    var s = _context.Korisnici.Find(sifra);
                     if (s == null)
                     {
                         return NotFound();
                     }
-                    _context.Timovi.Remove(s);
+                    _context.Korisnici.Remove(s);
                     _context.SaveChanges();
                     return Ok(new { poruka = "Uspjesno obrisano" });
                 }
@@ -115,7 +115,5 @@ namespace Timovi.Controllers
 
             }
         }
+
     }
-
-
-

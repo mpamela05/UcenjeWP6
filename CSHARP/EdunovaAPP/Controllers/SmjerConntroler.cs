@@ -24,7 +24,7 @@ namespace EdunovaAPP.Controllers
             }
             catch (Exception e) 
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
         [HttpGet]
@@ -42,7 +42,7 @@ namespace EdunovaAPP.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 
@@ -58,7 +58,7 @@ namespace EdunovaAPP.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 
@@ -90,7 +90,7 @@ namespace EdunovaAPP.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 
@@ -112,7 +112,7 @@ namespace EdunovaAPP.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 

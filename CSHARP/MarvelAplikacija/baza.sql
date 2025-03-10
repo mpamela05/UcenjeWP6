@@ -4,8 +4,8 @@ create database marvel2;
 
 use marvel2;
 
-create table identitet(
-sifra int not null auto_increment,
+create table identiteti(
+sifra int identity(1,1) not null,
 ime varchar(50) not null,
 prezime varchar(50) null,
 godine int null,
@@ -17,7 +17,7 @@ primary key (sifra)
 
 
 create table timovi(
-sifra int not null auto_increment ,
+sifra int not null identity(1,1) ,
 naziv varchar(50) not null,
 mjesto varchar(50) not null,
 primary key (sifra)
@@ -25,10 +25,10 @@ primary key (sifra)
 
 
 create table heroji(
-sifra int not null auto_increment,
+sifra int not null identity(1,1),
 ime varchar(50) not null,
 moc varchar(250) not null,
-mjesto varchar(100),
+mjesto varchar(100) null,
 osobnost varchar(100) not null,
 g_dolaska int not null,
 identitet int,
@@ -107,7 +107,7 @@ values ('Mantis', 'Empatija, borilačke vještine', 'Cerberus', 'Naivna, empati�
 
 
 create table korisnici(
-sifra int not null auto_increment,
+sifra int not null identity(1,1),
 nadimak varchar(50) not null,
 lozinka varchar(100) not null,
 mail varchar(50) not null,

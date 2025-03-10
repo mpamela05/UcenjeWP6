@@ -1,18 +1,19 @@
 ﻿using MarvelAplikacija.Data;
 using Microsoft.AspNetCore.Mvc;
+using MarvelAplikacija.Models;
 
-namespace Identitet.Controllers
+namespace MarvelAplikacija.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller")]
-    public class IdentitetController : ControllerBase
+    [Route("api/v1/[controller]")]
+    public class IdentitetiController : ControllerBase
     {
 
         private readonly MarvelContext _context;
 
-        public IdentitetController(MarvelContext context)
+        public IdentitetiController(MarvelContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         [HttpGet]
@@ -20,11 +21,11 @@ namespace Identitet.Controllers
         {
             try
             {
-                return Ok(_context.Identitet);
+                return Ok(_context.Identiteti);
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
         [HttpGet]
@@ -33,7 +34,7 @@ namespace Identitet.Controllers
         {
             try
             {
-                var s = _context.Identitet.Find(sifra);
+                var s = _context.Identiteti.Find(sifra);
                 if (s == null)
                 {
                     return NotFound();
@@ -42,24 +43,24 @@ namespace Identitet.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
 
         }
 
         [HttpPost]
-        public IActionResult Post(IdentitetController Identitet)
+        public IActionResult Post([FromBody] Identiteti identitet)
         {
             try
             {
-                _context.Identitet.Add(Identitet);
+                _context.Identiteti.Add(identitet);
                 _context.SaveChanges();
-                return Post(Identitet);
+                return CreatedAtAction(nameof(Get), new { sifra = identitet.Sifra }, identitet);
 
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
 
@@ -67,29 +68,29 @@ namespace Identitet.Controllers
         [HttpPut]
         [Route("{sifra:int}")]
         [Produces("application/json")]
-        public IActionResult Put(int sifra, IdentitetController identitet)
+        public IActionResult Put(int sifra, [FromBody] Identiteti identitet)
         {
             try
             {
-                var s = _context.Identitet.Find(sifra);
+                var s = _context.Identiteti.Find(sifra);
                 if (s == null)
                 {
                     return NotFound();
                 }
-                s.ime = Identiteti.ime;
-                s.prezime = Identiteti.prezime;
-                s.godine = Identiteti.godine;
-                s.god_rodjenja = Identiteti.god_rodjenja;
-                s.god_smrti = Identiteti.god_smrti;
+                s.Ime = identitet.Ime;
+                s.Prezime = identitet.Prezime;
+                s.Godine = identitet.Godine;
+                s.God_rodjenja = identitet.God_rodjenja;
+                s.God_smrti = identitet.God_smrti;
 
 
-                _context.Identitet.Update(s);
+                _context.Identiteti.Update(s);
                 _context.SaveChanges();
                 return Ok(new { poruka = "Uspjesno promjenjeno" });
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
         }
         [HttpDelete]
@@ -98,18 +99,18 @@ namespace Identitet.Controllers
         {
             try
             {
-                var s = _context.Identitet.Find(sifra);
+                var s = _context.Identiteti.Find(sifra);
                 if (s == null)
                 {
                     return NotFound();
                 }
-                _context.Identitet.Remove(s);
+                _context.Identiteti.Remove(s);
                 _context.SaveChanges();
                 return Ok(new { poruka = "Uspjesno obrisano" });
             }
             catch (Exception e)
             {
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
 
 
@@ -117,13 +118,5 @@ namespace Identitet.Controllers
         }
     }
 
-    internal class Identiteti
-    {
-        internal static object ime;
-        internal static object prezime;
-        internal static object godine;
-        internal static object god_rodjenja;
-        internal static object god_smrti;
-    }
 }
 

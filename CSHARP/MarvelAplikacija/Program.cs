@@ -1,5 +1,4 @@
 ﻿using MarvelAplikacija.Data;
-using MarvelAplikacija.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,4 +35,7 @@ app.UseSwaggerUI(o =>
 });
 
 app.MapControllers();
+app.UseStaticFiles();
+app.UseDefaultFiles();
+app.MapFallbackToFile("index.html");
 app.Run();
